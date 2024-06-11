@@ -3,6 +3,7 @@ describe("Fundamentals test", () => {
     cy.visit("/fundamentals")
   })
 
+  /*
   it('Contains correct header text', () => {
     //cy.get('[data-test="fundamentals-header"]').contains("Testing Fundamentals")
     //cy.get('[data-test="fundamentals-header"]').contains(/Testing Fundamentals/i)   regex and using i makes it case insensitive
@@ -24,5 +25,20 @@ describe("Fundamentals test", () => {
     cy.contains(/Your tests will exist in a describe block./i).should("be.visible")
     cy.get('[data-test="accordion-item-1"] div[role="button"]').click()
     cy.contains(/Your tests will exist in a describe block./i).should("not.be.visible")
-  }) */
+  })
+    */
+
+
+  // Refactoring above test to use Custom commands as we are frequently using cy.gets data-test="xyz"
+  // update support/commands.js file
+  it('Contains correct header text', () => {
+    cy.getDataTest("fundamentals-header").should("contain.text", "Testing Fundamentals")
+  })
+  it("Accordion works correctly", () => {
+    cy.contains(/Your tests will exist in a describe block./i).should("not.be.visible")
+    cy.get('[data-test="accordion-item-1"] div[role="button"]').click()
+    cy.contains(/Your tests will exist in a describe block./i).should("be.visible")
+    cy.get('[data-test="accordion-item-1"] div[role="button"]').click()
+    cy.contains(/Your tests will exist in a describe block./i).should("not.be.visible")
+  })
 })
