@@ -14,4 +14,14 @@ describe("Fundamentals test", () => {
     cy.get('[data-test="accordion-item-1"] div[role="button"]').click()
     cy.contains(/Your tests will exist in a describe block./i).should("not.be.visible")
   })
+  // To run only a specific test
+  /* it.only("Accordion works correctly ONLY", () => {
+    cy.visit("/fundamentals")
+    cy.contains(/Your tests will exist in a describe block./i).should("not.be.visible")
+    //cy.get('[data-test="accordion-item-1"]').click().pause()
+    cy.get('[data-test="accordion-item-1"] div[role="button"]').click()
+    cy.contains(/Your tests will exist in a describe block./i).should("be.visible")
+    cy.get('[data-test="accordion-item-1"] div[role="button"]').click()
+    cy.contains(/Your tests will exist in a describe block./i).should("not.be.visible")
+  }) */
 })
