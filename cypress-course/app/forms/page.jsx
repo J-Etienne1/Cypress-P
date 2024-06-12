@@ -47,7 +47,7 @@ export default function FormsPage(){
             value={inputValue}
             onChange={e => setInputValue(e.target.value)}
             />
-            <Button onClick={() => {
+            <Button data-test="subscribe-button" onClick={() => {
                 if (!inputValue.includes('.com') ){
                     setSubMessage(`Invalid email: ${inputValue}!`)
                 } else if (inputValue.length){
