@@ -11,7 +11,12 @@ describe("form test", () => {
         cy.contains(/Successfully subbed: jasonetienne1@gmail.com!/i).should("exist")
         cy.wait(3000)
         cy.contains(/Successfully subbed: jasonetienne1@gmail.com!/i).should("not.exist")
+
+        //Unhappy Path
+        cy.get("@subscribe-input").type("jasonetienne1@gmail.io")
+        cy.contains(/invalid email: jasonetienne1@gmail.io!/i).should("not.exist")
+        cy.getDataTest("subscribe-button").click()
+        cy.contains(/invalid email: jasonetienne1@gmail.io!/i).should("exist")
     })
-    
 
 })
