@@ -12,5 +12,6 @@ describe("form test", () => {
         cy.wait(3000)
         cy.contains(/Successfully subbed: jasonetienne1@gmail.com!/i).should("not.exist")
     })
+    
 
 })
