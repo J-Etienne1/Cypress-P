@@ -23,5 +23,4 @@ describe("form test", () => {
         cy.getDataTest("subscribe-button").click()
         cy.contains(/fail!/i).should("exist")
     })
-
 })
