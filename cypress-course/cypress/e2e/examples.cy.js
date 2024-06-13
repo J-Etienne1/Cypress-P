@@ -17,10 +17,9 @@ describe("Various examples", () => {
     cy.getDataTest("nav-forms").click();
     cy.location("pathname").should("equal", "/forms")
 
-
-    // cy.getDataTest('nav-examples').click();
+    // Need to come back to an figure out failure - Timed out retrying after 4000ms: expected '/forms' to equal '/examples'
+    // cy.getDataTest("nav-examples").click();
     // cy.location("pathname").should("equal", "/examples")
-
 
     cy.getDataTest("nav-component").click();
     cy.location("pathname").should("equal", "/component")
