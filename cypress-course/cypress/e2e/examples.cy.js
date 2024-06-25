@@ -37,3 +37,4 @@ describe("Various examples", () => {
     cy.getDataTest("post-button").click();
   })
 });
+
