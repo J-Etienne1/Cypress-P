@@ -54,7 +54,7 @@ export default function GrudgeList(){
             <Button data-test="add-grudge-button" onClick={addGrudge}>
                 Add Grudge
             </Button>
-            <ul style={{color: 'white', listStyleType: 'none'}}>
+            <ul data-test="grudge-list" style={{color: 'white', listStyleType: 'none'}}>
                 {
                     grudges.length > 0 && (
                         grudges.map((g) => {
