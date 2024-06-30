@@ -36,5 +36,9 @@ describe("Various examples", () => {
     })
     cy.getDataTest("post-button").click();
   })
+
+  it.only("gruges", () => {
+    
+  })
 });
 
