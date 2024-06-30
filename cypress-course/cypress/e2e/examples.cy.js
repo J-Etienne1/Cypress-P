@@ -38,7 +38,7 @@ describe("Various examples", () => {
   })
 
   it.only("gruges", () => {
-    
+    cy.contains(/add some grudges/i)
   })
 });
 
