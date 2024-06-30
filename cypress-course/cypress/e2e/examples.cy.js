@@ -37,8 +37,11 @@ describe("Various examples", () => {
     cy.getDataTest("post-button").click();
   })
 
-  it.only("gruges", () => {
+  it.only("grudges", () => {
     cy.contains(/add some grudges/i)
+    cy.getDataTest("grudge-input").within(()=> {
+      cy.get("input").type("Jason")
+    })
   })
 });
 
