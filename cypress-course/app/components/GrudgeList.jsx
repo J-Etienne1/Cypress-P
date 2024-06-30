@@ -51,7 +51,7 @@ export default function GrudgeList(){
             data-test="grudge-input"
             />
             </div>
-            <Button onClick={addGrudge}>
+            <Button data-test="add-grudge-button" onClick={addGrudge}>
                 Add Grudge
             </Button>
             <ul style={{color: 'white', listStyleType: 'none'}}>
