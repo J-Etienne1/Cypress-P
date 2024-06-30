@@ -39,6 +39,7 @@ describe("Various examples", () => {
 
   it.only("grudges", () => {
     cy.contains(/add some grudges/i)
+
     cy.getDataTest("grudge-list").within(()=> {
       cy.get("li").should("have.length", 0)
     })
@@ -46,9 +47,20 @@ describe("Various examples", () => {
       cy.get("input").type("Jason")
     })
     cy.getDataTest("add-grudge-button").click()
+
     cy.getDataTest("grudge-list").within(()=> {
       cy.get("li").should("have.length", 1)
     })
+
+    cy.getDataTest("grudge-input").within(()=> {
+      cy.get("input").type("Nick")
+    })
+    cy.getDataTest("add-grudge-button").click()
+
+    cy.getDataTest("grudge-list").within(()=> {
+      cy.get("li").should("have.length", 2)
+    })
+    
   })
 });
 
