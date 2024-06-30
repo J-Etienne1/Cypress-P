@@ -44,6 +44,8 @@ describe("Various examples", () => {
 
     cy.getDataTest("clear-button").should("not.exist");
 
+    cy.getDataTest("grudge-list-title").should("have.text", "Add Some Grudges")
+
     cy.getDataTest("grudge-input").within(() => {
       cy.get("input").type("Jason");
     });
@@ -52,6 +54,8 @@ describe("Various examples", () => {
     cy.getDataTest("grudge-list").within(() => {
       cy.get("li").should("have.length", 1);
     });
+
+    cy.getDataTest("grudge-list-title").should("have.text", "Grudges");
 
     cy.getDataTest("grudge-input").within(() => {
       cy.get("input").type("Nick");
